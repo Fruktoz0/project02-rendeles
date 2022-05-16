@@ -53,6 +53,32 @@ const orders = [
         ar: 2400,
         kep: "https://images.pexels.com/photos/11485254/pexels-photo-11485254.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     },
-
- 
 ]
+
+const result = document.querySelector(".result");
+
+let output = "";
+
+orders.map((order)=>{
+
+
+    output +=`
+    
+        <div class="order">
+
+            <div>
+                <img src='${order.kep}' alt='pizza'/>
+            </div>
+
+            <h3>${order.pizza}</h3>
+            <hr>
+            <h4>Ár: ${order.ar}</h4>
+            <p>Extra: ${order.extra}</p>
+            <p>Ital: ${order.ital}</p>
+
+        </div>
+
+    `;
+})
+
+result.innerHTML = output;
